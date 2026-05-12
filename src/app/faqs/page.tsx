@@ -163,7 +163,7 @@ export default function FAQsPage() {
       <section className="relative pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-panel-3d.jpg"
+            src="/images/8 Solar with car.png"
             alt="Solar FAQ and resources"
             fill
             className="object-cover"

@@ -114,20 +114,19 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Side - 3D Render Style Image (Z-Pattern: Top Right) */}
-          <div className="relative z-0 h-[280px] sm:h-[400px] lg:h-[600px] w-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(5,150,105,0.15)] group">
-            {/* Glassmorphism overlay for modern premium feel */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 mix-blend-overlay z-10 rounded-[2rem]" />
+          {/* Right Side - Full Image Display */}
+          <div className="relative z-0 w-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(5,150,105,0.15)] group bg-secondary">
             <Image
               src="/images/11 Solar system.png"
-              alt="Modern suburban home with sleek black solar panels - 3D architectural visualization style"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105 rounded-[2rem]"
-              quality={80}
+              alt="Complete solar energy system diagram showing panels, inverter, battery and grid connection"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+              quality={85}
             />
             
             {/* Floating "Dashboard Tease" - Monitoring App Preview */}
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-outline-variant/20 shadow-lg">
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-outline-variant/20 shadow-lg z-10">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                   <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>

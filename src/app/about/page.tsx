@@ -6,28 +6,28 @@ const milestones = [
     year: "2009",
     title: "Founded with a Mission",
     description: "Started MS Green Solar with a vision to democratize clean energy access across India. Our first installation was a 3kW system in Mumbai.",
-    image: "/images/trust-section.jpg",
+    image: "/images/6 House.png",
     stats: "First 3kW system installed"
   },
   {
     year: "2015",
     title: "1,000th Installation Milestone",
     description: "Reached our first major milestone with 1,000 residential installations across Maharashtra, Gujarat, and Karnataka.",
-    image: "/images/trust-section-bg.jpg",
+    image: "/images/10 House with family.png",
     stats: "1,000+ happy customers"
   },
   {
     year: "2020",
     title: "Commercial Division Launch",
     description: "Expanded into commercial and industrial solar solutions, completing our first 1MW rooftop installation for a textile manufacturer.",
-    image: "/images/services-commercial.jpg",
+    image: "/images/4 Towers.png",
     stats: "First 1MW commercial project"
   },
   {
     year: "2024",
     title: "25 MW Capacity Achieved",
     description: "Proud to have installed 25 MW of clean energy capacity, preventing 35,000 tons of CO2 emissions annually.",
-    image: "/images/about-solar-farm.jpg",
+    image: "/images/2 Solar panels.png",
     stats: "25 MW total capacity"
   }
 ];
@@ -83,7 +83,7 @@ export default function AboutPage() {
       <section className="relative pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/about-mission-overlay.jpg"
+            src="/images/13 Solar workers.png"
             alt="Solar installation team at work"
             fill
             className="object-cover"
@@ -166,16 +166,15 @@ export default function AboutPage() {
 
                 {/* Image */}
                 <div className="flex-1 max-w-lg">
-                  <div className="relative rounded-[2rem] overflow-hidden shadow-[0_16px_48px_-8px_rgba(5,150,105,0.15)] group">
+                  <div className="relative rounded-[2rem] overflow-hidden shadow-[0_16px_48px_-8px_rgba(5,150,105,0.15)] group bg-surface-container">
                     <Image
                       src={milestone.image}
                       alt={milestone.title}
-                      width={500}
-                      height={300}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
-                      quality={80}
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+                      quality={85}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
                   </div>
                 </div>
               </div>

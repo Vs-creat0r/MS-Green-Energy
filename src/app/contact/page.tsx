@@ -331,7 +331,7 @@ export default function ContactPage() {
       <section className="relative pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/about-solar-farm.jpg"
+            src="/images/14 Solar appointment.png"
             alt="Solar consultation and assessment"
             fill
             className="object-cover"

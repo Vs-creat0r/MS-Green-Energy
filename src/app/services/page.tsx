@@ -283,16 +283,15 @@ export default function ServicesPage() {
 
             {/* Image */}
             <div className="relative">
-              <div className="relative rounded-[2rem] overflow-hidden shadow-[0_16px_48px_-8px_rgba(5,150,105,0.15)] group">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-[0_16px_48px_-8px_rgba(5,150,105,0.15)] group bg-surface-container">
                 <Image
                   src={currentService.image}
                   alt={currentService.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700"
-                  quality={80}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+                  quality={85}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
               </div>
             </div>
           </div>

@@ -6,19 +6,20 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left: Image with floating card */}
-          <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(77,101,70,0.1)]">
+          <div className="relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(77,101,70,0.1)] bg-surface-container">
             <Image
               src="/images/12 Solar panels.png"
               alt="Large solar farm with rows of photovoltaic panels"
-              fill
-              className="object-cover"
-              quality={80}
+              width={1200}
+              height={800}
+              className="w-full h-auto object-contain"
+              quality={85}
             />
-            <div className="absolute bottom-6 left-6 bg-surface/95 backdrop-blur rounded-[1.5rem] p-5 shadow-lg">
-              <div className="text-3xl font-extrabold text-primary font-headline">
+            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-surface/95 backdrop-blur rounded-[1.5rem] p-4 sm:p-5 shadow-lg">
+              <div className="text-2xl sm:text-3xl font-extrabold text-primary font-headline">
                 15+
               </div>
-              <div className="text-sm text-on-surface-variant font-label uppercase tracking-wide">
+              <div className="text-xs sm:text-sm text-on-surface-variant font-label uppercase tracking-wide">
                 Years in Solar
               </div>
             </div>
