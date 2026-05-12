@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Custom animation keyframes */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideFade {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Tailwind utilities for custom animations */
+  --animate-fadeInUp: fadeInUp 0.6s ease-out both;
+  --animate-slideFade: slideFade 0.5s ease-out both;
+
+  /* Brand Typography System - Sora + Inter */
+  --font-headline: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  /* Brand Color System - "Sophisticated Energy Independence" */
+  --color-primary: #059669; /* Solar Emerald */
+  --color-primary-container: #047857; /* Darker emerald for containers */
+  --color-primary-fixed: #d1fae5; /* Light emerald tint */
+  --color-primary-fixed-dim: #a7f3d0;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffffff;
+  --color-on-primary-fixed: #064e3b;
+  --color-on-primary-fixed-variant: #065f46;
+
+  --color-secondary: #1E293B; /* Deep Atlantic Navy */
+  --color-secondary-container: #334155; /* Lighter navy for containers */
+  --color-secondary-fixed: #f1f5f9; /* Light navy tint */
+  --color-secondary-fixed-dim: #e2e8f0;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #ffffff;
+  --color-on-secondary-fixed: #0f172a;
+  --color-on-secondary-fixed-variant: #1e293b;
+
+  --color-accent: #F59E0B; /* Golden Hour - for CTAs only */
+  --color-accent-container: #fbbf24;
+  --color-on-accent: #ffffff;
+  --color-on-accent-container: #451a03;
+
+  /* Surface colors - Clean white base with subtle warmth */
+  --color-surface: #ffffff;
+  --color-surface-dim: #f8fafc;
+  --color-surface-bright: #ffffff;
+  --color-surface-container: #f1f5f9;
+  --color-surface-container-low: #f8fafc;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e2e8f0;
+  --color-surface-container-highest: #cbd5e1;
+
+  --color-on-surface: #0f172a; /* Deep navy for text */
+  --color-on-surface-variant: #475569; /* Medium slate for secondary text */
+  --color-outline: #94a3b8;
+  --color-outline-variant: #cbd5e1;
+
+  --color-error: #dc2626;
+  --color-error-container: #fef2f2;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #7f1d1d;
+
+  /* Modern Premium Radius System */
+  --radius-sm: 0.75rem; /* 12px - Modern Premium feel */
+  --radius-md: 1rem; /* 16px */
+  --radius-lg: 1.5rem; /* 24px */
+  --radius-xl: 2rem; /* 32px */
+  --radius-full: 9999px;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeInUp, .animate-slideFade { animation: none !important; }
+}
