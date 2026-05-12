@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-surface via-surface-container-low to-surface-container">
+    <section className="relative pt-20 sm:pt-24 pb-20 sm:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-surface via-surface-container-low to-surface-container">
       {/* Background Image with Modern Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -22,28 +22,28 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Z-Pattern Layout Implementation */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           
           {/* Left Side - Main Content (Z-Pattern: Start) */}
           <div className="max-w-2xl">
             {/* Trust Badge - Floating Bar (Z-Pattern: Top) */}
-            <div className="inline-flex items-center gap-6 bg-surface-container-lowest/95 backdrop-blur-md rounded-full px-6 py-3 mb-8 shadow-lg border border-outline-variant/20">
+            <div className="inline-flex flex-wrap items-center gap-3 sm:gap-6 bg-surface-container-lowest/95 backdrop-blur-md rounded-2xl sm:rounded-full px-4 sm:px-6 py-2.5 sm:py-3 mb-6 sm:mb-8 shadow-lg border border-outline-variant/20">
               <div className="flex items-center gap-2">
-                <span className="text-primary font-headline font-bold text-sm">15+ Years</span>
+                <span className="text-primary font-headline font-bold text-xs sm:text-sm">15+ Years</span>
               </div>
-              <div className="w-px h-4 bg-outline-variant"></div>
+              <div className="w-px h-4 bg-outline-variant hidden sm:block"></div>
               <div className="flex items-center gap-1">
-                <span className="text-accent text-lg">★★★★★</span>
-                <span className="text-on-surface-variant font-label text-sm font-medium">4.9</span>
+                <span className="text-accent text-base sm:text-lg">★★★★★</span>
+                <span className="text-on-surface-variant font-label text-xs sm:text-sm font-medium">4.9</span>
               </div>
-              <div className="w-px h-4 bg-outline-variant"></div>
+              <div className="w-px h-4 bg-outline-variant hidden sm:block"></div>
               <div className="flex items-center gap-2">
-                <span className="text-primary font-headline font-bold text-sm">All 50 States</span>
+                <span className="text-primary font-headline font-bold text-xs sm:text-sm">All 50 States</span>
               </div>
             </div>
 
             {/* Main Headline (Z-Pattern: Center Left) */}
-            <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold text-on-surface leading-tight tracking-tight mb-6 animate-fadeInUp">
+            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-on-surface leading-tight tracking-tight mb-4 sm:mb-6 animate-fadeInUp">
               Stop Renting Your Power.
               <br />
               <span className="text-primary">Start Owning It.</span>
@@ -67,7 +67,7 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons (Z-Pattern: Bottom Center) */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-16">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 bg-accent text-on-accent rounded-full font-label font-bold text-lg hover:bg-accent-container transition-all duration-300 shadow-[0_8px_32px_-4px_rgba(245,158,11,0.25)] active:scale-95 group"
@@ -86,9 +86,9 @@ export default function HeroSection() {
             </div>
 
             {/* Trust Stats - "By The Numbers" */}
-            <div className="grid grid-cols-3 gap-8 max-w-lg">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-lg">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary font-headline">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary font-headline">
                   25 MW
                 </div>
                 <div className="mt-1 text-xs text-on-surface-variant font-label uppercase tracking-widest">
@@ -115,7 +115,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right Side - 3D Render Style Image (Z-Pattern: Top Right) */}
-          <div className="relative z-0 h-[400px] lg:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(5,150,105,0.15)] group">
+          <div className="relative z-0 h-[280px] sm:h-[400px] lg:h-[600px] w-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(5,150,105,0.15)] group">
             {/* Glassmorphism overlay for modern premium feel */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 mix-blend-overlay z-10 rounded-[2rem]" />
             <Image
@@ -127,7 +127,7 @@ export default function HeroSection() {
             />
             
             {/* Floating "Dashboard Tease" - Monitoring App Preview */}
-            <div className="absolute bottom-6 left-6 right-6 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-4 border border-outline-variant/20 shadow-lg">
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-outline-variant/20 shadow-lg">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                   <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -148,7 +148,7 @@ export default function HeroSection() {
         </div>
 
         {/* Scroll Indicator (Z-Pattern: Bottom) */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block">
           <div className="w-6 h-10 border-2 border-outline-variant rounded-full flex justify-center">
             <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
           </div>

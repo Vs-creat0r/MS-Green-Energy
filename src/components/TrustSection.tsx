@@ -27,7 +27,7 @@ const certifications = [
 
 export default function TrustSection() {
   return (
-    <section id="why-us" className="py-20 bg-surface">
+    <section id="why-us" className="py-12 sm:py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Why Us */}
         <div className="text-center mb-16">
@@ -39,11 +39,11 @@ export default function TrustSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
           {differentiators.map((d) => (
             <div
               key={d.title}
-              className="group relative rounded-[2rem] overflow-hidden bg-surface-container-lowest shadow-[0_8px_32px_-4px_rgba(27,28,26,0.02)] hover:shadow-[0_16px_48px_-8px_rgba(27,28,26,0.05)] transition-shadow duration-500 border border-outline-variant/30"
+              className="group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-surface-container-lowest shadow-[0_8px_32px_-4px_rgba(27,28,26,0.02)] hover:shadow-[0_16px_48px_-8px_rgba(27,28,26,0.05)] transition-shadow duration-500 border border-outline-variant/30"
             >
               <div className="relative p-8 text-center md:text-left">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto md:mx-0">
@@ -61,7 +61,7 @@ export default function TrustSection() {
         </div>
 
         {/* Social Proof */}
-        <div className="mt-20 relative rounded-[3rem] overflow-hidden">
+        <div className="mt-12 sm:mt-20 relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/trust-section-bg.jpg"
@@ -72,19 +72,19 @@ export default function TrustSection() {
             />
             <div className="absolute inset-0 bg-primary/90" />
           </div>
-          <div className="relative text-center text-white p-10 md:p-16">
-            <div className="text-6xl font-extrabold text-white font-headline">
+          <div className="relative text-center text-white p-6 sm:p-10 md:p-16">
+            <div className="text-4xl sm:text-6xl font-extrabold text-white font-headline">
               4.9
             </div>
-            <div className="mt-2 text-2xl text-[#FFD700]">
+            <div className="mt-2 text-xl sm:text-2xl text-[#FFD700]">
               {"★".repeat(5)}
             </div>
-            <p className="mt-4 text-xl text-white/90 font-body">
+            <p className="mt-3 sm:mt-4 text-base sm:text-xl text-white/90 font-body">
               Average customer rating across 5,000+ installations
             </p>
 
             {/* Certifications */}
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <div className="mt-6 sm:mt-10 flex flex-wrap justify-center gap-2 sm:gap-4">
               {certifications.map((c) => (
                 <span
                   key={c}

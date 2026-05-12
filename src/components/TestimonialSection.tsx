@@ -102,7 +102,7 @@ export default function TestimonialSection() {
   };
 
   return (
-    <section className="py-20 bg-surface-container-low">
+    <section className="py-12 sm:py-20 bg-surface-container-low">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-4">
@@ -114,7 +114,7 @@ export default function TestimonialSection() {
         </div>
 
         {/* Main Testimonial Card */}
-        <div className="relative bg-surface-container-lowest rounded-[2rem] p-8 md:p-12 shadow-[0_16px_48px_-8px_rgba(5,150,105,0.1)] mb-8">
+        <div className="relative bg-surface-container-lowest rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-8 md:p-12 shadow-[0_16px_48px_-8px_rgba(5,150,105,0.1)] mb-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             
             {/* Customer Info */}
@@ -198,14 +198,14 @@ export default function TestimonialSection() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-surface-container hover:bg-surface-container-high rounded-full flex items-center justify-center transition-colors duration-300 shadow-md"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-surface-container hover:bg-surface-container-high rounded-full flex items-center justify-center transition-colors duration-300 shadow-md z-10"
           >
             <span className="material-symbols-outlined text-on-surface-variant">chevron_left</span>
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-surface-container hover:bg-surface-container-high rounded-full flex items-center justify-center transition-colors duration-300 shadow-md"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-surface-container hover:bg-surface-container-high rounded-full flex items-center justify-center transition-colors duration-300 shadow-md z-10"
           >
             <span className="material-symbols-outlined text-on-surface-variant">chevron_right</span>
           </button>
@@ -227,7 +227,7 @@ export default function TestimonialSection() {
         </div>
 
         {/* Stats Summary */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           <div className="text-center">
             <div className="font-headline text-3xl font-bold text-primary mb-2">4.9★</div>
             <div className="font-body text-on-surface-variant text-sm">Average Rating</div>

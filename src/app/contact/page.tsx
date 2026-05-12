@@ -341,14 +341,14 @@ export default function ContactPage() {
         </div>
         
         <div className="relative max-w-4xl mx-auto text-center text-white z-10">
-          <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+          <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight">
             Get Your Free Solar Assessment
           </h1>
-          <p className="font-body text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-body text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
             Personalized consultation, detailed analysis, and custom proposal - all at no cost. Results delivered within 24 hours.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="font-headline text-lg font-bold text-white">Free</div>
               <div className="font-body text-white/80 text-sm">No Cost Assessment</div>
@@ -388,7 +388,7 @@ export default function ContactPage() {
               />
             </div>
 
-            <div className="p-8 md:p-12">
+            <div className="p-5 sm:p-8 md:p-12">
               {/* Step Indicator */}
               <div className="flex items-center justify-center mb-8">
                 <div className="flex items-center gap-4">
@@ -457,7 +457,7 @@ export default function ContactPage() {
               </form>
 
               {/* Navigation */}
-              <div className="flex justify-between items-center mt-12">
+              <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 mt-8 sm:mt-12">
                 <button
                   onClick={handleBack}
                   disabled={currentStep === 0}
@@ -528,7 +528,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {contactMethods.map((method, index) => (
               <a
                 key={index}

@@ -93,7 +93,7 @@ export default function AboutPage() {
         </div>
         
         <div className="relative max-w-4xl mx-auto text-center text-white z-10">
-          <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+          <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight">
             The MS Green Standard
           </h1>
           <p className="font-body text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -101,7 +101,7 @@ export default function AboutPage() {
           </p>
           
           {/* Trust Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 max-w-2xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="font-headline text-2xl font-bold text-white">15+</div>
               <div className="font-body text-white/80 text-sm">Years Experience</div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
 
           <div className="space-y-16">
             {milestones.map((milestone, index) => (
-              <div key={milestone.year} className={`flex flex-col lg:flex-row items-center gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+              <div key={milestone.year} className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 {/* Content */}
                 <div className="flex-1 max-w-lg">
                   <div className="inline-flex items-center gap-3 mb-4">
@@ -196,7 +196,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {team.map((member) => (
               <div key={member.name} className="group">
                 <div className="bg-surface-container-lowest rounded-[2rem] p-6 shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
@@ -267,7 +267,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {certifications.map((cert) => (
               <div key={cert} className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 flex items-center gap-3">
                 <span className="material-symbols-outlined text-accent text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -281,7 +281,7 @@ export default function AboutPage() {
           </div>
 
           {/* Mission Statement */}
-          <div className="mt-16 bg-white/10 backdrop-blur-md rounded-[2rem] p-8 border border-white/20">
+          <div className="mt-12 sm:mt-16 bg-white/10 backdrop-blur-md rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 border border-white/20">
             <h3 className="font-headline text-2xl font-bold text-white mb-4">
               Our Mission
             </h3>

@@ -51,11 +51,11 @@ export default function Footer() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
                 <span className="material-symbols-outlined text-on-accent text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -131,14 +131,14 @@ export default function Footer() {
 
         {/* Contact Section */}
         <div className="mt-16 pt-8 border-t border-white/20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-center">
             
             {/* Contact Methods */}
             <div className="lg:col-span-3">
               <h3 className="font-headline text-lg font-bold text-white mb-4">
                 Get in Touch
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {contactInfo.map((contact) => (
                   <a
                     key={contact.label}
@@ -173,12 +173,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="font-body text-white/70 text-sm">
             © {new Date().getFullYear()} MS Green Solar Systems Pvt. Ltd. All rights reserved.
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-accent text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
                 verified_user

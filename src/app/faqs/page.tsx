@@ -192,14 +192,14 @@ export default function FAQsPage() {
       </section>
 
       {/* Category Navigation */}
-      <section className="py-8 bg-surface-container-low sticky top-16 z-40 border-b border-outline-variant/20">
+      <section className="py-4 sm:py-8 bg-surface-container-low sticky top-16 z-40 border-b border-outline-variant/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex overflow-x-auto gap-2 sm:gap-4 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center scrollbar-hide">
             {faqCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-body font-medium text-sm transition-all duration-300 ${
+                className={`inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-body font-medium text-xs sm:text-sm transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
                   activeCategory === category.id
                     ? 'bg-primary text-on-primary shadow-md'
                     : 'bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container hover:text-primary'
@@ -274,7 +274,7 @@ export default function FAQsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {incentivePrograms.map((program, index) => (
               <div key={index} className="bg-surface-container-lowest rounded-xl p-6 shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-300">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
@@ -308,7 +308,7 @@ export default function FAQsPage() {
           </div>
 
           {/* Incentive Calculator CTA */}
-          <div className="mt-16 text-center bg-gradient-to-r from-primary to-primary-container rounded-[2rem] p-12">
+          <div className="mt-12 sm:mt-16 text-center bg-gradient-to-r from-primary to-primary-container rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-12">
             <h3 className="font-headline text-2xl font-bold text-white mb-4">
               Calculate Your Total Incentives
             </h3>

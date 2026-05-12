@@ -45,10 +45,10 @@ export default function ServicesSection() {
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[280px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 auto-rows-auto md:auto-rows-[280px]">
           
           {/* Residential - Large Feature (2x2) */}
-          <div className="md:col-span-2 md:row-span-2 group relative rounded-[2rem] overflow-hidden shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
+          <div className="sm:col-span-2 md:col-span-2 md:row-span-2 min-h-[320px] md:min-h-0 group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
             <div className="absolute inset-0">
               <div 
                 className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
@@ -82,7 +82,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Battery Storage - Medium (1x2) */}
-          <div className="md:row-span-2 group relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-primary to-primary-container shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
+          <div className="sm:col-span-1 md:row-span-2 min-h-[280px] md:min-h-0 group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-gradient-to-br from-primary to-primary-container shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
             <div className="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
             <div className="relative p-6 h-full flex flex-col justify-between text-white">
               <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
@@ -110,7 +110,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Commercial - Medium (1x1) */}
-          <div className="group relative rounded-[2rem] overflow-hidden bg-surface-container-lowest shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
+          <div className="group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-surface-container-lowest shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
             <div className="p-6 h-full flex flex-col justify-between">
               <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
                 <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -137,7 +137,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Maintenance - Small (1x1) */}
-          <div className="group relative rounded-[2rem] overflow-hidden bg-surface-container-lowest shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
+          <div className="group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-surface-container-lowest shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
             <div className="p-6 h-full flex flex-col justify-between">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                 <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -164,7 +164,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Trust/Stats Block - Wide (2x1) */}
-          <div className="md:col-span-2 bg-gradient-to-r from-accent via-accent-container to-accent rounded-[2rem] p-6 flex items-center justify-between shadow-[0_8px_32px_-4px_rgba(245,158,11,0.15)] relative overflow-hidden">
+          <div className="sm:col-span-2 md:col-span-2 bg-gradient-to-r from-accent via-accent-container to-accent rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-[0_8px_32px_-4px_rgba(245,158,11,0.15)] relative overflow-hidden">
             <div className="absolute -right-16 -top-16 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
             <div className="relative z-10">
               <h3 className="font-headline text-xl font-bold text-on-accent mb-2">
@@ -189,7 +189,7 @@ export default function ServicesSection() {
           </div>
 
           {/* CTA Block - Wide (2x1) */}
-          <div className="md:col-span-2 bg-surface-container-lowest rounded-[2rem] p-6 flex items-center justify-between border-2 border-primary/20 hover:border-primary/40 transition-colors duration-300">
+          <div className="sm:col-span-2 md:col-span-2 bg-surface-container-lowest rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-2 border-primary/20 hover:border-primary/40 transition-colors duration-300">
             <div>
               <h3 className="font-headline text-lg font-bold text-on-surface mb-1">
                 Ready to Customize Your System?

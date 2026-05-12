@@ -141,7 +141,7 @@ export default function LeadForm() {
             />
           </div>
 
-          <div className="p-8 md:p-10">
+          <div className="p-5 sm:p-8 md:p-10">
             {/* Step Indicator */}
             <div className="flex items-center justify-center mb-8">
               <span className="text-sm font-medium text-on-surface-variant font-body">
@@ -287,7 +287,7 @@ export default function LeadForm() {
 
             {/* Trust Elements */}
             <div className="mt-8 pt-6 border-t border-outline-variant/20">
-              <div className="flex items-center justify-center gap-6 text-sm text-on-surface-variant">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm text-on-surface-variant">
                 <div className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-primary text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>
                     shield

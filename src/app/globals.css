@@ -77,3 +77,19 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-fadeInUp, .animate-slideFade { animation: none !important; }
 }
+
+/* Hide scrollbar for mobile horizontal navigation */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure proper mobile viewport behavior */
+@media (max-width: 640px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}

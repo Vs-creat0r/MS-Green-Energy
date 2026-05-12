@@ -218,14 +218,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Navigation */}
-      <section className="py-8 bg-surface-container-low sticky top-16 z-40 border-b border-outline-variant/20">
+      <section className="py-4 sm:py-8 bg-surface-container-low sticky top-16 z-40 border-b border-outline-variant/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex overflow-x-auto gap-2 sm:gap-4 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center scrollbar-hide">
             {services.map((service) => (
               <button
                 key={service.id}
                 onClick={() => setActiveService(service.id)}
-                className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-body font-medium text-sm transition-all duration-300 ${
+                className={`inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-body font-medium text-xs sm:text-sm transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
                   activeService === service.id
                     ? 'bg-primary text-on-primary shadow-md'
                     : 'bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container hover:text-primary'
@@ -244,7 +244,7 @@ export default function ServicesPage() {
       {/* Service Detail Section */}
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20">
             {/* Content */}
             <div>
               <div className="inline-flex items-center gap-3 mb-6">
@@ -321,7 +321,7 @@ export default function ServicesPage() {
             <h3 className="font-headline text-2xl font-bold text-on-surface mb-8 text-center">
               {currentService.id === 'maintenance' ? 'Service Plans' : 'System Options & Pricing'}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {(currentService.systemSizes || currentService.servicePlans || []).map((option: any, index) => (
                 <div key={index} className="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 hover:border-primary/40 transition-all duration-300 group">
                   <div className="text-center">
@@ -401,7 +401,7 @@ export default function ServicesPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="text-center bg-gradient-to-r from-primary to-primary-container rounded-[2rem] p-12">
+          <div className="text-center bg-gradient-to-r from-primary to-primary-container rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-12">
             <h3 className="font-headline text-2xl font-bold text-white mb-4">
               Ready to Get Started?
             </h3>

@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-surface">
+    <section id="about" className="py-12 sm:py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left: Image with floating card */}
-          <div className="relative h-80 md:h-96 lg:h-[500px] rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(77,101,70,0.1)]">
+          <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(77,101,70,0.1)]">
             <Image
               src="/images/about-solar-farm.jpg"
               alt="Large solar farm with rows of photovoltaic panels"
@@ -90,7 +90,7 @@ export default function AboutSection() {
         </div>
 
         {/* Mission Statement */}
-        <div className="mt-20 relative rounded-[3rem] overflow-hidden">
+        <div className="mt-12 sm:mt-20 relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/about-mission-overlay.jpg"
@@ -101,7 +101,7 @@ export default function AboutSection() {
             />
             <div className="absolute inset-0 bg-primary/90" />
           </div>
-          <div className="relative text-center text-white p-10 md:p-16">
+          <div className="relative text-center text-white p-6 sm:p-10 md:p-16">
             <h3 className="text-2xl md:text-3xl font-bold font-headline">
               Our Mission
             </h3>
