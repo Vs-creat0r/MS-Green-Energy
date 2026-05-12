@@ -2,28 +2,28 @@ import ServiceCard from "./ServiceCard";
 
 const services = [
   {
-    image: "/images/services-residential.jpg",
+    image: "/images/3 Home.png",
     title: "Residential Solar Systems",
     description: "Custom-designed solar panel systems for your home. Reduce or eliminate your electricity bills with clean, renewable energy that pays for itself.",
     icon: "home",
     quickFact: "Average 5-7 year payback period"
   },
   {
-    image: "/images/services-commercial.jpg",
+    image: "/images/4 Towers.png",
     title: "Commercial Solar Solutions",
     description: "Scale your business with commercial-grade solar installations. Lower operating costs and meet your sustainability goals with enterprise-level systems.",
     icon: "domain",
     quickFact: "Up to 40% reduction in operating costs"
   },
   {
-    image: "/images/services-battery.jpg",
+    image: "/images/7 Solar panel zoom.png",
     title: "Battery Storage & Energy Independence",
     description: "Pair your solar system with battery storage to keep your home powered day and night, even during grid outages.",
     icon: "battery_charging_full",
     quickFact: "Stay powered during grid outages"
   },
   {
-    image: "/images/services-maintenance.jpg",
+    image: "/images/13 Solar workers.png",
     title: "Maintenance & Ongoing Support",
     description: "Keep your solar investment performing at peak efficiency with our comprehensive maintenance and support plans.",
     icon: "settings",

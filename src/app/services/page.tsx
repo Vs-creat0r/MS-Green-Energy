@@ -10,7 +10,7 @@ const services = [
     title: "Residential Solar Systems",
     subtitle: "Power Your Home with Clean Energy",
     description: "Custom-designed solar panel systems for Indian homes. Reduce or eliminate your electricity bills with clean, renewable energy that pays for itself.",
-    image: "/images/services-residential.jpg",
+    image: "/images/3 Home.png",
     icon: "home",
     features: [
       "Custom system sizing based on your energy consumption",
@@ -48,7 +48,7 @@ const services = [
     title: "Commercial Solar Solutions",
     subtitle: "Scale Your Business with Clean Energy",
     description: "Enterprise-grade solar installations for businesses, industries, and institutions. Reduce operating costs and meet sustainability goals.",
-    image: "/images/services-commercial.jpg",
+    image: "/images/4 Towers.png",
     icon: "domain",
     features: [
       "Large-scale rooftop and ground-mounted systems",
@@ -86,7 +86,7 @@ const services = [
     title: "Battery Storage & Energy Independence",
     subtitle: "Power When You Need It Most",
     description: "Advanced battery storage solutions to store solar energy for use during outages, peak hours, and night time.",
-    image: "/images/services-battery.jpg",
+    image: "/images/7 Solar panel zoom.png",
     icon: "battery_charging_full",
     features: [
       "Lithium-ion battery technology",
@@ -124,7 +124,7 @@ const services = [
     title: "Maintenance & Ongoing Support",
     subtitle: "Maximize Your Solar Investment",
     description: "Comprehensive maintenance and support services to ensure your solar system performs at peak efficiency throughout its 25-year lifespan.",
-    image: "/images/services-maintenance.jpg",
+    image: "/images/13 Solar workers.png",
     icon: "settings",
     features: [
       "Regular cleaning and inspection services",
@@ -189,7 +189,7 @@ export default function ServicesPage() {
       <section className="relative pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/divider-solar-panels.jpg"
+            src="/images/12 Solar panels.png"
             alt="Solar services overview"
             fill
             className="object-cover"

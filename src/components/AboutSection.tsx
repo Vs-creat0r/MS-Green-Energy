@@ -8,7 +8,7 @@ export default function AboutSection() {
           {/* Left: Image with floating card */}
           <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(77,101,70,0.1)]">
             <Image
-              src="/images/about-solar-farm.jpg"
+              src="/images/12 Solar panels.png"
               alt="Large solar farm with rows of photovoltaic panels"
               fill
               className="object-cover"
@@ -93,7 +93,7 @@ export default function AboutSection() {
         <div className="mt-12 sm:mt-20 relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/about-mission-overlay.jpg"
+              src="/images/9 Solar with sun.png"
               alt="Sunlight through solar panels"
               fill
               className="object-cover"

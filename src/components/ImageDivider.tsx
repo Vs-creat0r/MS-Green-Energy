@@ -5,7 +5,7 @@ export default function ImageDivider() {
   return (
     <section className="relative h-72 sm:h-96 md:h-[500px] flex items-center overflow-hidden">
       <Image
-        src="/images/divider-solar-panels.jpg"
+        src="/images/12 Solar panels.png"
         alt="Solar panels under bright sun with blue sky and clouds"
         fill
         className="object-cover"

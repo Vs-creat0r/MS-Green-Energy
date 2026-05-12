@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* Background Image with Modern Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-bg-full.jpg"
+          src="/images/9 Solar with sun.png"
           alt="Modern home with sleek black solar panels under blue sky"
           fill
           priority
@@ -119,7 +119,7 @@ export default function HeroSection() {
             {/* Glassmorphism overlay for modern premium feel */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 mix-blend-overlay z-10 rounded-[2rem]" />
             <Image
-              src="/images/hero-panel-3d.jpg"
+              src="/images/11 Solar system.png"
               alt="Modern suburban home with sleek black solar panels - 3D architectural visualization style"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105 rounded-[2rem]"

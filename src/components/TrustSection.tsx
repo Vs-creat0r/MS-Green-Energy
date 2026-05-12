@@ -64,7 +64,7 @@ export default function TrustSection() {
         <div className="mt-12 sm:mt-20 relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/trust-section-bg.jpg"
+              src="/images/10 House with family.png"
               alt="Happy family with solar panels"
               fill
               className="object-cover"
