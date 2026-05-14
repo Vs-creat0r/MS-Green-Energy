@@ -42,21 +42,21 @@ export async function submitLead(
     phone: formData.get("phone") as string,
     zip_code: formData.get("zip_code") as string,
     // Optional assessment fields
-    monthly_bill: formData.get("monthly_bill") as string || null,
-    state: formData.get("state") as string || null,
-    address: formData.get("address") as string || null,
-    roof_type: formData.get("roof_type") as string || null,
-    roof_area: formData.get("roof_area") as string || null,
-    shading: formData.get("shading") as string || null,
-    monthly_units: formData.get("monthly_units") as string || null,
-    usage_pattern: formData.get("usage_pattern") as string || null,
-    backup_need: formData.get("backup_need") as string || null,
-    primary_goal: formData.get("primary_goal") as string || null,
-    budget_range: formData.get("budget_range") as string || null,
-    timeline: formData.get("timeline") as string || null,
-    financing_preference: formData.get("financing_preference") as string || null,
-    preferred_contact: formData.get("preferred_contact") as string || null,
-    best_time: formData.get("best_time") as string || null,
+    monthly_bill: formData.get("monthly_bill") as string || undefined,
+    state: formData.get("state") as string || undefined,
+    address: formData.get("address") as string || undefined,
+    roof_type: formData.get("roof_type") as string || undefined,
+    roof_area: formData.get("roof_area") as string || undefined,
+    shading: formData.get("shading") as string || undefined,
+    monthly_units: formData.get("monthly_units") as string || undefined,
+    usage_pattern: formData.get("usage_pattern") as string || undefined,
+    backup_need: formData.get("backup_need") as string || undefined,
+    primary_goal: formData.get("primary_goal") as string || undefined,
+    budget_range: formData.get("budget_range") as string || undefined,
+    timeline: formData.get("timeline") as string || undefined,
+    financing_preference: formData.get("financing_preference") as string || undefined,
+    preferred_contact: formData.get("preferred_contact") as string || undefined,
+    best_time: formData.get("best_time") as string || undefined,
   };
 
   const result = LeadSchema.safeParse(raw);
@@ -72,7 +72,13 @@ export async function submitLead(
     Object.entries(result.data).filter(([_, value]) => value !== null && value !== undefined)
   );
 
-  const { error } = await supabase.from("Visitor_Leads").insert(leadData);
+  const form_type = formData.get("form_type") as string || "general";
+  let tableName = "Visitor_Leads";
+  if (form_type === "appointment") tableName = "Appointment_Leads";
+  else if (form_type === "detailed_consultation") tableName = "Detailed_Consultations";
+  else if (form_type === "free_assessment") tableName = "Free_Assessment_Leads";
+
+  const { error } = await supabase.from(tableName).insert(leadData);
 
   if (error) {
     console.error("Supabase error:", error);

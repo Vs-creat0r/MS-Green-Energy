@@ -1,41 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const quickLinks = [
-  { name: "About Us", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "FAQs & Resources", href: "/faqs" },
-  { name: "Free Assessment", href: "/contact" },
-  { name: "Privacy Policy", href: "/privacy" },
-  { name: "Terms of Service", href: "/terms" }
-];
-
-const services = [
+const solutionLinks = [
   { name: "Residential Solar", href: "/services#residential" },
-  { name: "Commercial Solar", href: "/services#commercial" },
+  { name: "Commercial Solutions", href: "/services#commercial" },
   { name: "Battery Storage", href: "/services#battery" },
-  { name: "Maintenance Plans", href: "/services#maintenance" }
+  { name: "EV Charging", href: "/services" },
 ];
 
-const contactInfo = [
-  { 
-    icon: "call", 
-    label: "Call Us", 
-    value: "+91-800-473-3676", 
-    href: "tel:+918004733676" 
-  },
-  { 
-    icon: "email", 
-    label: "Email", 
-    value: "info@msgreensolar.com", 
-    href: "mailto:info@msgreensolar.com" 
-  },
-  { 
-    icon: "chat", 
-    label: "WhatsApp", 
-    value: "+91-98765-43210", 
-    href: "https://wa.me/919876543210" 
-  }
+const companyLinks = [
+  { name: "About Us", href: "/about" },
+  { name: "Our Process", href: "/services" },
+  { name: "Careers", href: "/about" },
+  { name: "Contact Us", href: "/contact" },
+];
+
+const legalLinks = [
+  { name: "Privacy Policy", href: "/privacy" },
+  { name: "Terms of Service", href: "/terms" },
+  { name: "Cookie Policy", href: "/privacy" },
 ];
 
 export default function Footer() {
@@ -51,12 +34,13 @@ export default function Footer() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        {/* Brand + Links Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
           
           {/* Brand Section */}
           <div className="sm:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
                 <span className="material-symbols-outlined text-on-accent text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
                   solar_power
@@ -67,42 +51,32 @@ export default function Footer() {
               </span>
             </div>
             
-            <p className="text-white/80 font-body text-lg leading-relaxed mb-8 max-w-md">
-              Empowering India's transition to clean energy. From residential rooftops to large commercial installations, we deliver reliable solar solutions with 25-year warranties.
+            <p className="text-white/80 font-body text-sm leading-relaxed mb-6 max-w-sm">
+              Empowering the energy transition with premium solar solutions for homes and businesses.
             </p>
 
-            {/* Trust Badges */}
-            <div className="grid grid-cols-2 gap-4 max-w-sm">
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
-                <div className="font-headline text-lg font-bold text-white">15+</div>
-                <div className="font-body text-white/70 text-xs">Years Experience</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
-                <div className="font-headline text-lg font-bold text-white">25 MW</div>
-                <div className="font-body text-white/70 text-xs">Installed Capacity</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
-                <div className="font-headline text-lg font-bold text-white">5,000+</div>
-                <div className="font-body text-white/70 text-xs">Happy Customers</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
-                <div className="font-headline text-lg font-bold text-white">₹0</div>
-                <div className="font-body text-white/70 text-xs">Down Payment</div>
-              </div>
+            {/* Social Icons */}
+            <div className="flex items-center gap-3">
+              <a href="#" className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors border border-white/10">
+                <span className="material-symbols-outlined text-white text-lg">link</span>
+              </a>
+              <a href="#" className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors border border-white/10">
+                <span className="material-symbols-outlined text-white text-lg">share</span>
+              </a>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Solutions */}
           <div>
-            <h3 className="font-headline text-lg font-bold text-white mb-6">
-              Quick Links
+            <h3 className="font-headline text-sm font-bold text-white mb-5 uppercase tracking-wider">
+              Solutions
             </h3>
             <div className="space-y-3">
-              {quickLinks.map((link) => (
+              {solutionLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="block font-body text-white/80 hover:text-accent transition-colors duration-300 text-sm"
+                  className="block font-body text-white/70 hover:text-accent transition-colors duration-300 text-sm"
                 >
                   {link.name}
                 </Link>
@@ -110,93 +84,54 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Company */}
           <div>
-            <h3 className="font-headline text-lg font-bold text-white mb-6">
-              Our Services
+            <h3 className="font-headline text-sm font-bold text-white mb-5 uppercase tracking-wider">
+              Company
             </h3>
             <div className="space-y-3">
-              {services.map((service) => (
+              {companyLinks.map((link) => (
                 <Link
-                  key={service.name}
-                  href={service.href}
-                  className="block font-body text-white/80 hover:text-accent transition-colors duration-300 text-sm"
+                  key={link.name}
+                  href={link.href}
+                  className="block font-body text-white/70 hover:text-accent transition-colors duration-300 text-sm"
                 >
-                  {service.name}
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="font-headline text-sm font-bold text-white mb-5 uppercase tracking-wider">
+              Legal
+            </h3>
+            <div className="space-y-3">
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="block font-body text-white/70 hover:text-accent transition-colors duration-300 text-sm"
+                >
+                  {link.name}
                 </Link>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Contact Section */}
-        <div className="mt-16 pt-8 border-t border-white/20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-center">
-            
-            {/* Contact Methods */}
-            <div className="lg:col-span-3">
-              <h3 className="font-headline text-lg font-bold text-white mb-4">
-                Get in Touch
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {contactInfo.map((contact) => (
-                  <a
-                    key={contact.label}
-                    href={contact.href}
-                    className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20 hover:bg-white/20 transition-all duration-300 group"
-                  >
-                    <span className="material-symbols-outlined text-accent text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                      {contact.icon}
-                    </span>
-                    <div>
-                      <div className="font-body text-white/70 text-xs">{contact.label}</div>
-                      <div className="font-body text-white font-medium text-sm group-hover:text-accent transition-colors">
-                        {contact.value}
-                      </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="text-center lg:text-right">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-on-accent rounded-full font-body font-bold text-sm hover:bg-accent-container transition-all duration-300 shadow-lg active:scale-95"
-              >
-                Start Your Solar Journey
-                <span className="material-symbols-outlined text-lg">arrow_forward</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Section */}
-        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="font-body text-white/70 text-sm">
-            © {new Date().getFullYear()} MS Green Solar Systems Pvt. Ltd. All rights reserved.
+        <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="font-body text-white/50 text-sm">
+            © {new Date().getFullYear()} MS Green Solar. All rights reserved.
           </div>
           
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-accent text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                verified_user
-              </span>
-              <span className="font-body text-white/70 text-xs">MNRE Empaneled</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-accent text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                shield
-              </span>
-              <span className="font-body text-white/70 text-xs">25-Year Warranty</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-accent text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                eco
-              </span>
-              <span className="font-body text-white/70 text-xs">Carbon Neutral</span>
-            </div>
+          <div className="flex items-center gap-2 text-white/50 text-sm font-body">
+            <span className="material-symbols-outlined text-accent text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+              location_on
+            </span>
+            United States (EN)
           </div>
         </div>
       </div>

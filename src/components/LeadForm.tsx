@@ -181,18 +181,18 @@ export default function LeadForm() {
             {currentStepData.type === "contact" && (
               <form id="contact-form" action={formAction} className="space-y-6 max-w-md mx-auto">
                 {/* Hidden fields for previous answers */}
+                <input type="hidden" name="form_type" value="free_assessment" />
                 <input type="hidden" name="monthly_bill" value={formData.monthly_bill} />
                 <input type="hidden" name="state" value={formData.state} />
                 
                 <div>
-                  <label htmlFor="full_name" className="block text-sm font-medium text-on-surface-variant mb-2 font-body">
-                    Full Name *
+                  <label htmlFor="full_name" className="block text-xs md:text-sm font-medium text-on-surface-variant mb-2 font-body">
+                    Full Name
                   </label>
                   <input
                     id="full_name"
                     name="full_name"
                     type="text"
-                    required
                     placeholder="John Smith"
                     value={formData.full_name}
                     onChange={(e) => handleContactInputChange("full_name", e.target.value)}
@@ -201,14 +201,13 @@ export default function LeadForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-on-surface-variant mb-2 font-body">
-                    Email Address *
+                  <label htmlFor="email" className="block text-xs md:text-sm font-medium text-on-surface-variant mb-2 font-body">
+                    Email Address
                   </label>
                   <input
                     id="email"
                     name="email"
                     type="email"
-                    required
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={(e) => handleContactInputChange("email", e.target.value)}
@@ -218,14 +217,13 @@ export default function LeadForm() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-on-surface-variant mb-2 font-body">
-                      Phone *
+                    <label htmlFor="phone" className="block text-xs md:text-sm font-medium text-on-surface-variant mb-2 font-body">
+                      Phone
                     </label>
                     <input
                       id="phone"
                       name="phone"
                       type="tel"
-                      required
                       placeholder="+91 98765 43210"
                       value={formData.phone}
                       onChange={(e) => handleContactInputChange("phone", e.target.value)}
@@ -233,14 +231,13 @@ export default function LeadForm() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="zip_code" className="block text-sm font-medium text-on-surface-variant mb-2 font-body">
-                      ZIP Code *
+                    <label htmlFor="zip_code" className="block text-xs md:text-sm font-medium text-on-surface-variant mb-2 font-body">
+                      ZIP Code
                     </label>
                     <input
                       id="zip_code"
                       name="zip_code"
                       type="text"
-                      required
                       placeholder="400001"
                       value={formData.zip_code}
                       onChange={(e) => handleContactInputChange("zip_code", e.target.value)}

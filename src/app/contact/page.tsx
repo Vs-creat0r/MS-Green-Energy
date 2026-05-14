@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { useActionState } from "react";
+import { useState, startTransition, useActionState } from "react";
 import { submitLead } from "@/app/actions";
 import Image from "next/image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const initialState: { success: boolean; message: string } = {
   success: false,
@@ -326,6 +327,8 @@ export default function ContactPage() {
   };
 
   return (
+    <>
+    <Header />
     <div className="min-h-screen bg-surface">
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -421,27 +424,62 @@ export default function ContactPage() {
               </div>
 
               {/* Form Fields */}
-              <form className="space-y-6 max-w-2xl mx-auto">
-                {currentStepData.fields.map((field) => (
-                  <div key={field.name}>
-                    <label className="block text-sm font-medium text-on-surface-variant mb-2 font-body">
-                      {field.label} {field.required && <span className="text-accent">*</span>}
+              <form className="space-y-8 max-w-4xl mx-auto">
+                {currentStepData.fields.map((field, index) => (
+                  <div key={field.name} className="bg-surface p-5 sm:p-6 rounded-2xl border border-outline-variant/20 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
+                    <label className="flex items-center gap-2 md:gap-3 text-sm md:text-base font-bold text-on-surface mb-3 md:mb-4 font-headline border-b border-outline-variant/10 pb-2 md:pb-3">
+                      <span className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] md:text-xs font-bold shrink-0">
+                        {index + 1}
+                      </span>
+                      <span className="leading-snug">{field.label}</span>
                     </label>
                     
                     {field.type === 'select' ? (
-                      <select
-                        value={formData[field.name] || ''}
-                        onChange={(e) => handleInputChange(field.name, e.target.value)}
-                        className="w-full bg-surface-container-high border border-outline-variant/20 focus:border-primary focus:ring-0 rounded-xl py-4 px-5 text-on-surface font-body transition-all duration-300"
-                        required={field.required}
-                      >
-                        <option value="">Select an option</option>
-                        {field.options?.map((option) => (
-                          <option key={option.value} value={option.value}>
-                            {option.label}
-                          </option>
-                        ))}
-                      </select>
+                      <>
+                        {/* Mobile Dropdown View */}
+                        <div className="block md:hidden">
+                          <select
+                            value={formData[field.name] || ''}
+                            onChange={(e) => handleInputChange(field.name, e.target.value)}
+                            className="w-full bg-surface-container-high border border-outline-variant/20 focus:border-primary focus:ring-0 rounded-xl py-4 px-5 text-on-surface font-body transition-all duration-300"
+                          >
+                            <option value="">Select an option...</option>
+                            {field.options?.map((option) => (
+                              <option key={option.value} value={option.value}>
+                                {option.label}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+
+                        {/* Desktop Interactive Cards View */}
+                        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {field.options?.map((option) => (
+                            <button
+                              key={option.value}
+                              type="button"
+                              onClick={() => handleInputChange(field.name, option.value)}
+                              className={`p-4 rounded-xl border text-left transition-all duration-300 flex flex-col justify-center min-h-[5rem] ${
+                                formData[field.name] === option.value
+                                  ? "bg-primary/10 border-primary text-primary shadow-sm scale-[1.02]"
+                                  : "bg-surface-container-lowest border-outline-variant/20 text-on-surface-variant hover:border-primary/40 hover:bg-surface-container hover:scale-[1.01]"
+                              }`}
+                            >
+                              <div className="flex items-start justify-between gap-2">
+                                <span className="font-body font-medium leading-snug">{option.label}</span>
+                                <span 
+                                  className={`material-symbols-outlined shrink-0 transition-opacity duration-300 ${
+                                    formData[field.name] === option.value ? "opacity-100 text-primary" : "opacity-0"
+                                  }`} 
+                                  style={{ fontVariationSettings: "'FILL' 1" }}
+                                >
+                                  check_circle
+                                </span>
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      </>
                     ) : (
                       <input
                         type={field.type}
@@ -449,7 +487,6 @@ export default function ContactPage() {
                         onChange={(e) => handleInputChange(field.name, e.target.value)}
                         placeholder={field.placeholder}
                         className="w-full bg-surface-container-high border border-outline-variant/20 focus:border-primary focus:ring-0 rounded-xl py-4 px-5 text-on-surface font-body transition-all duration-300 placeholder:text-outline-variant"
-                        required={field.required}
                       />
                     )}
                   </div>
@@ -479,7 +516,10 @@ export default function ContactPage() {
                       Object.entries(formData).forEach(([key, value]) => {
                         form.append(key, value);
                       });
-                      formAction(form);
+                      form.append("form_type", "detailed_consultation");
+                      startTransition(() => {
+                        formAction(form);
+                      });
                     }}
                     disabled={!isStepComplete() || pending}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-on-accent rounded-full font-body font-bold text-lg hover:bg-accent-container transition-all duration-300 shadow-[0_8px_32px_-4px_rgba(245,158,11,0.25)] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
@@ -685,5 +725,7 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
+    <Footer />
+    </>
   );
 }

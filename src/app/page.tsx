@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
+import WhyChooseSection from "@/components/WhyChooseSection";
 import ServicesSection from "@/components/ServicesSection";
-import TrustSection from "@/components/TrustSection";
+import ProvenResults from "@/components/ProvenResults";
+import SavingsTeaser from "@/components/SavingsTeaser";
 import TestimonialSection from "@/components/TestimonialSection";
-import ImageDivider from "@/components/ImageDivider";
+import SavingsCalculator from "@/components/SavingsCalculator";
 import FAQSection from "@/components/FAQSection";
 import LeadForm from "@/components/LeadForm";
 
@@ -15,11 +16,12 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
-        <AboutSection />
+        <WhyChooseSection />
         <ServicesSection />
-        <TrustSection />
+        <ProvenResults />
+        <SavingsTeaser />
         <TestimonialSection />
-        <ImageDivider />
+        <SavingsCalculator />
         <FAQSection />
         <LeadForm />
       </main>

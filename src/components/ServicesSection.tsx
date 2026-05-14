@@ -1,210 +1,263 @@
-import ServiceCard from "./ServiceCard";
+import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
     image: "/images/3 Home.png",
-    title: "Residential Solar Systems",
-    description: "Custom-designed solar panel systems for your home. Reduce or eliminate your electricity bills with clean, renewable energy that pays for itself.",
+    title: "Residential Solar",
+    description: "Complete home energy independence. High-efficiency panels designed to reduce your electricity bills seamlessly.",
     icon: "home",
-    quickFact: "Average 5-7 year payback period"
+    highlight: "Example System",
+    highlightValue: "3 kW System",
+    highlightPrice: "Starting at ₹1,80,000",
+    features: [
+      "25-Year Performance Warranty",
+      "Smart App Monitoring",
+      "Net Metering Setup",
+    ],
+    ctaText: "Get a Quote",
+    ctaLink: "/contact",
+    popular: true,
   },
   {
     image: "/images/4 Towers.png",
-    title: "Commercial Solar Solutions",
-    description: "Scale your business with commercial-grade solar installations. Lower operating costs and meet your sustainability goals with enterprise-level systems.",
+    title: "Commercial Solutions",
+    description: "Maximize ROI and meet corporate sustainability goals with our robust, large-scale energy systems.",
     icon: "domain",
-    quickFact: "Up to 40% reduction in operating costs"
+    highlight: "Focus Area",
+    highlightValue: "Accelerated ROI",
+    highlightPrice: "Customized tax & depreciation plans",
+    features: [
+      "Scalable Deployments (50kW+)",
+      "Zero-Downtime Installation",
+      "Dedicated Account Manager",
+    ],
+    ctaText: "Consult an Expert",
+    ctaLink: "/contact",
+    popular: false,
   },
   {
     image: "/images/7 Solar panel zoom.png",
-    title: "Battery Storage & Energy Independence",
-    description: "Pair your solar system with battery storage to keep your home powered day and night, even during grid outages.",
+    title: "Battery Storage",
+    description: "Uninterrupted power supply. Store your excess solar energy for nighttime use or grid outages.",
     icon: "battery_charging_full",
-    quickFact: "Stay powered during grid outages"
+    highlight: "Key Benefit",
+    highlightValue: "24/7 Backup",
+    highlightPrice: "",
+    features: [
+      "Lithium-Ion Technology",
+      "Automated Switchover",
+      "Expandable Capacity",
+    ],
+    ctaText: "View Storage Options",
+    ctaLink: "/services",
+    popular: false,
+  },
+];
+
+const maintenancePlans = [
+  {
+    name: "Basic",
+    subtitle: "Annual Checkup",
+    features: ["1 Annual Cleaning", "Visual Inspection", "Performance Report"],
+    recommended: false,
   },
   {
-    image: "/images/13 Solar workers.png",
-    title: "Maintenance & Ongoing Support",
-    description: "Keep your solar investment performing at peak efficiency with our comprehensive maintenance and support plans.",
-    icon: "settings",
-    quickFact: "25-year comprehensive warranty"
+    name: "Premium",
+    subtitle: "Proactive Care",
+    features: ["2 Bi-Annual Cleanings", "Detailed Component Check", "Priority Support Queue"],
+    recommended: true,
+  },
+  {
+    name: "Enterprise",
+    subtitle: "Maximum Uptime",
+    features: ["Quarterly Maintenance", "24/7 Active Monitoring", "4-Hour Response SLA"],
+    recommended: false,
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-surface-container-low">
+    <section id="services" className="py-16 sm:py-24 bg-surface-container-low">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-2xl">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-4 tracking-tight">
-            The Solution Suite
+        {/* Section Header */}
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-on-surface mb-4 tracking-tight">
+            Empower Your Energy Future
           </h2>
-          <p className="font-body text-on-surface-variant text-lg">
-            From residential rooftops to large commercial installations, we deliver end-to-end solar solutions that power your future.
+          <p className="font-body text-on-surface-variant text-lg max-w-3xl mx-auto leading-relaxed">
+            Discover our tiered solar solutions designed for maximum efficiency and sustainability.
+            From home installations to commercial enterprise systems, we provide reliable, clean
+            energy backed by industry-leading warranties.
           </p>
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 auto-rows-auto md:auto-rows-[280px]">
-          
-          {/* Residential - Large Feature (2x2) */}
-          <div className="sm:col-span-2 md:col-span-2 md:row-span-2 min-h-[320px] md:min-h-0 group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
-            <div className="absolute inset-0">
-              <div 
-                className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-                style={{ backgroundImage: `url(${services[0].image})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/80 to-primary/90" />
-            </div>
-            <div className="relative p-8 h-full flex flex-col justify-between text-white">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  {services[0].icon}
-                </span>
-              </div>
-              <div>
-                <h3 className="font-headline text-2xl font-bold mb-3">
-                  {services[0].title}
-                </h3>
-                <p className="font-body text-white/90 text-sm mb-4 leading-relaxed">
-                  {services[0].description}
-                </p>
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
-                  <span className="material-symbols-outlined text-accent text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    trending_up
-                  </span>
-                  <span className="font-label font-medium text-white text-xs">
-                    {services[0].quickFact}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Battery Storage - Medium (1x2) */}
-          <div className="sm:col-span-1 md:row-span-2 min-h-[280px] md:min-h-0 group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-gradient-to-br from-primary to-primary-container shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
-            <div className="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-            <div className="relative p-6 h-full flex flex-col justify-between text-white">
-              <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  {services[2].icon}
-                </span>
-              </div>
-              <div>
-                <h3 className="font-headline text-lg font-bold mb-2">
-                  {services[2].title}
-                </h3>
-                <p className="font-body text-white/90 text-xs mb-3 leading-relaxed">
-                  {services[2].description}
-                </p>
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-3 py-1.5 border border-white/20">
-                  <span className="material-symbols-outlined text-accent text-xs" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    power
-                  </span>
-                  <span className="font-label font-medium text-white text-xs">
-                    {services[2].quickFact}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Commercial - Medium (1x1) */}
-          <div className="group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-surface-container-lowest shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
-            <div className="p-6 h-full flex flex-col justify-between">
-              <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
-                <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  {services[1].icon}
-                </span>
-              </div>
-              <div>
-                <h3 className="font-headline text-lg font-bold text-on-surface mb-2">
-                  {services[1].title}
-                </h3>
-                <p className="font-body text-on-surface-variant text-xs mb-3 leading-relaxed">
-                  Scale your business with enterprise-level solar solutions.
-                </p>
-                <div className="inline-flex items-center gap-2 bg-accent/10 rounded-full px-3 py-1.5 border border-accent/20">
-                  <span className="material-symbols-outlined text-accent text-xs" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    business
-                  </span>
-                  <span className="font-label font-medium text-accent text-xs">
-                    {services[1].quickFact}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Maintenance - Small (1x1) */}
-          <div className="group relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-surface-container-lowest shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.12)] transition-all duration-500">
-            <div className="p-6 h-full flex flex-col justify-between">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  {services[3].icon}
-                </span>
-              </div>
-              <div>
-                <h3 className="font-headline text-lg font-bold text-on-surface mb-2">
-                  Maintenance & Support
-                </h3>
-                <p className="font-body text-on-surface-variant text-xs mb-3 leading-relaxed">
-                  Keep your investment performing at peak efficiency.
-                </p>
-                <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1.5 border border-primary/20">
-                  <span className="material-symbols-outlined text-primary text-xs" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    shield
-                  </span>
-                  <span className="font-label font-medium text-primary text-xs">
-                    {services[3].quickFact}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Trust/Stats Block - Wide (2x1) */}
-          <div className="sm:col-span-2 md:col-span-2 bg-gradient-to-r from-accent via-accent-container to-accent rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-[0_8px_32px_-4px_rgba(245,158,11,0.15)] relative overflow-hidden">
-            <div className="absolute -right-16 -top-16 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
-            <div className="relative z-10">
-              <h3 className="font-headline text-xl font-bold text-on-accent mb-2">
-                The MS Green Standard
-              </h3>
-              <p className="font-body text-on-accent/90 text-sm max-w-sm">
-                25 MW installed capacity across 5,000+ satisfied customers with industry-leading warranties.
-              </p>
-            </div>
-            <div className="flex gap-4 relative z-10">
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 text-center border border-white/20">
-                <span className="material-symbols-outlined text-white mb-1 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
-                <div className="font-headline font-bold text-white text-lg">25 MW</div>
-                <div className="font-label text-[10px] text-white/80 uppercase tracking-wide">Installed</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 text-center border border-white/20">
-                <span className="material-symbols-outlined text-white mb-1 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
-                <div className="font-headline font-bold text-white text-lg">5,000+</div>
-                <div className="font-label text-[10px] text-white/80 uppercase tracking-wide">Customers</div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Block - Wide (2x1) */}
-          <div className="sm:col-span-2 md:col-span-2 bg-surface-container-lowest rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-2 border-primary/20 hover:border-primary/40 transition-colors duration-300">
-            <div>
-              <h3 className="font-headline text-lg font-bold text-on-surface mb-1">
-                Ready to Customize Your System?
-              </h3>
-              <p className="font-body text-on-surface-variant text-sm">
-                Get a personalized quote based on your energy needs and roof specifications.
-              </p>
-            </div>
-            <a 
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-full font-label font-bold text-sm hover:bg-primary-container transition-all duration-300 shadow-md active:scale-95 whitespace-nowrap"
+        {/* Service Cards */}
+        <div className="space-y-8 sm:space-y-12 mb-16 sm:mb-20">
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className="bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] hover:shadow-[0_16px_48px_-8px_rgba(5,150,105,0.14)] transition-all duration-500 border border-outline-variant/15"
             >
-              Customize My System
-              <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </a>
+              {/* Service Image */}
+              <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden group">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  quality={80}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+                {/* Popular Badge */}
+                {service.popular && (
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-primary text-on-primary rounded-full px-4 py-2 font-label font-bold text-sm shadow-lg">
+                    <span
+                      className="material-symbols-outlined text-base"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      star
+                    </span>
+                    Most Popular
+                  </div>
+                )}
+              </div>
+
+              {/* Service Content */}
+              <div className="p-6 sm:p-8">
+                <div className="flex items-start gap-3 mb-3">
+                  <span
+                    className="material-symbols-outlined text-primary text-2xl mt-0.5"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    {service.icon}
+                  </span>
+                  <h3 className="font-headline text-2xl font-bold text-on-surface">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p className="font-body text-on-surface-variant mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+
+                {/* Highlight Box */}
+                {service.highlightValue && (
+                  <div className="bg-surface-container rounded-xl p-4 mb-6 border border-outline-variant/15">
+                    <div className="font-label text-primary text-xs font-semibold uppercase tracking-wider mb-1">
+                      {service.highlight}
+                    </div>
+                    <div className="font-headline text-xl font-bold text-on-surface">
+                      {service.highlightValue}
+                    </div>
+                    {service.highlightPrice && (
+                      <div className="font-body text-on-surface-variant text-sm mt-1">
+                        {service.highlightPrice}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Features */}
+                <div className="space-y-2.5 mb-8">
+                  {service.features.map((feature) => (
+                    <div key={feature} className="flex items-center gap-3">
+                      <span
+                        className="material-symbols-outlined text-primary text-lg"
+                        style={{ fontVariationSettings: "'FILL' 1" }}
+                      >
+                        check_circle
+                      </span>
+                      <span className="font-body text-on-surface-variant text-sm">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <Link
+                  href={service.ctaLink}
+                  className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 rounded-full font-label font-bold text-sm transition-all duration-300 active:scale-95 ${
+                    service.popular
+                      ? "bg-accent text-on-accent shadow-[0_8px_32px_-4px_rgba(245,158,11,0.25)] hover:bg-accent-container"
+                      : "bg-surface-container-lowest text-on-surface border-2 border-outline-variant/30 hover:border-primary/50 hover:text-primary"
+                  }`}
+                >
+                  {service.ctaText}
+                  <span className="material-symbols-outlined text-lg">
+                    arrow_forward
+                  </span>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Maintenance & Support Plans */}
+        <div className="bg-surface-container-lowest rounded-[2rem] p-6 sm:p-10 md:p-12 shadow-[0_8px_32px_-4px_rgba(5,150,105,0.08)] border border-outline-variant/15">
+          <div className="text-center mb-10">
+            <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <span
+                className="material-symbols-outlined text-primary text-2xl"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                support_agent
+              </span>
+            </div>
+            <h3 className="font-headline text-2xl sm:text-3xl font-bold text-on-surface mb-3">
+              Maintenance & Support Plans
+            </h3>
+            <p className="font-body text-on-surface-variant max-w-xl mx-auto">
+              Ensure peak performance year-round with our dedicated service tiers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {maintenancePlans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative rounded-2xl p-6 transition-all duration-300 ${
+                  plan.recommended
+                    ? "bg-primary/5 border-2 border-primary/30 shadow-[0_8px_32px_-4px_rgba(5,150,105,0.12)]"
+                    : "bg-surface-container border border-outline-variant/20 hover:border-primary/20"
+                }`}
+              >
+                {/* Recommended Badge */}
+                {plan.recommended && (
+                  <div className="absolute -top-3 right-4 bg-accent text-on-accent font-label font-bold text-xs px-3 py-1 rounded-full shadow-md">
+                    Recommended
+                  </div>
+                )}
+
+                <h4 className={`font-headline text-xl font-bold mb-1 ${
+                  plan.recommended ? "text-primary" : "text-on-surface"
+                }`}>
+                  {plan.name}
+                </h4>
+                <p className="font-body text-on-surface-variant text-sm mb-5">
+                  {plan.subtitle}
+                </p>
+
+                <div className="space-y-3">
+                  {plan.features.map((feature) => (
+                    <div key={feature} className="flex items-center gap-2.5">
+                      <span
+                        className={`material-symbols-outlined text-base ${
+                          plan.recommended ? "text-primary" : "text-on-surface-variant"
+                        }`}
+                        style={{ fontVariationSettings: "'FILL' 1" }}
+                      >
+                        check_circle
+                      </span>
+                      <span className="font-body text-on-surface-variant text-sm">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

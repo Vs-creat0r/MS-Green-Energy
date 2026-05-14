@@ -22,7 +22,7 @@ const testimonials = [
     location: "Pune, Maharashtra",
     system: "7kW Residential System",
     savings: "₹48,000/year",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&q=80",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&q=80",
     quote: "Best investment we've made for our home. The system pays for itself in 6 years, and we have 19 more years of free electricity. The monitoring app shows real-time generation - it's amazing!",
     rating: 5,
     beforeBill: "₹6,200/month",

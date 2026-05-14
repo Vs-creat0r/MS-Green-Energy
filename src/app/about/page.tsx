@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const milestones = [
   {
@@ -78,6 +80,8 @@ const certifications = [
 
 export default function AboutPage() {
   return (
+    <>
+    <Header />
     <div className="min-h-screen bg-surface">
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -302,5 +306,7 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
+    <Footer />
+    </>
   );
 }

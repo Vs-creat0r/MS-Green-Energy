@@ -1,22 +1,40 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
+
+const navServices = [
+  { name: "Residential Solar", href: "/services#residential", icon: "home" },
+  { name: "Commercial Solutions", href: "/services#commercial", icon: "domain" },
+  { name: "Battery Storage", href: "/services#battery", icon: "battery_charging_full" },
+  { name: "Maintenance Plans", href: "/services#maintenance", icon: "build" },
+];
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "Monitor", href: "/services" },
+  { name: "Assess", href: "/contact" },
+];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
+    <>
     <header className="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo - Z-Pattern: Top Left (Identity) */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="material-symbols-outlined text-on-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                solar_power
-              </span>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="MS Green Solar Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+              quality={100}
+            />
             <span className="text-xl font-bold text-secondary tracking-tight font-headline">
               MS Green Solar
             </span>
@@ -76,33 +94,46 @@ export default function Header() {
 
       {/* Mobile Menu - Thumb-Zone Design */}
       {mobileOpen && (
-        <div className={`md:hidden bg-surface-container-lowest border-t border-outline-variant/20 px-4 pb-6 pt-4 space-y-3 transition-all duration-300 transform ${mobileOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"}`}>
-          <Link
-            href="/about"
-            onClick={() => setMobileOpen(false)}
-            className="block py-3 text-on-surface-variant font-body hover:text-primary"
-          >
-            About Us
-          </Link>
-          <Link
-            href="/services"
-            onClick={() => setMobileOpen(false)}
-            className="block py-3 text-on-surface-variant font-body hover:text-primary"
-          >
-            Services
-          </Link>
-          <Link
-            href="/faqs"
-            onClick={() => setMobileOpen(false)}
-            className="block py-3 text-on-surface-variant font-body hover:text-primary"
-          >
-            FAQs & Incentives
-          </Link>
+        <div className={`md:hidden bg-surface-container-lowest border-t border-outline-variant/20 px-4 pb-6 pt-4 space-y-1 transition-all duration-300 transform ${mobileOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"}`}>
+          {/* Service Links */}
+          <div className="mb-4">
+            {navServices.map((service) => (
+              <Link
+                key={service.name}
+                href={service.href}
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-3 py-3 px-2 text-on-surface-variant font-body hover:text-primary hover:bg-primary/5 rounded-xl transition-all"
+              >
+                <span
+                  className="material-symbols-outlined text-primary text-xl"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  {service.icon}
+                </span>
+                {service.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-outline-variant/20 my-2" />
+
+          {/* General Links */}
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="block py-3 px-2 text-on-surface-variant font-body hover:text-primary"
+            >
+              {link.name}
+            </Link>
+          ))}
           
           {/* Mobile Phone - Prominent */}
           <a
             href="tel:+918004733676"
-            className="flex items-center gap-3 py-3 text-secondary font-medium font-body"
+            className="flex items-center gap-3 py-3 px-2 text-secondary font-medium font-body"
           >
             <span className="material-symbols-outlined text-xl">call</span>
             +91-800-GREEN-SOL
@@ -120,6 +151,7 @@ export default function Header() {
           </div>
         </div>
       )}
+    </header>
 
       {/* Sticky Mobile CTA - Appears only on mobile, bottom 30% */}
       <div className="md:hidden fixed bottom-6 left-4 right-4 z-40">
@@ -131,6 +163,6 @@ export default function Header() {
           Call Now
         </Link>
       </div>
-    </header>
+    </>
   );
 }
